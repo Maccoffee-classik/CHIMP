@@ -1,0 +1,364 @@
+@charset "UTF-8";
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+.header {
+  background-color: #fff;
+}
+.header__search .form-control {
+  background-color: #edf0f6;
+  border: none;
+  border-radius: 30px;
+  padding: 0.375rem 1rem;
+  min-width: 250px;
+}
+.header__search .form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+.header .first-row {
+  margin-bottom: 32px !important;
+}
+.header .logo-top {
+  width: 134px;
+  height: 116px;
+}
+.header .form-control {
+  height: 50px;
+  max-width: 576px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #8d8f92;
+  background: #edf0f6;
+  margin-right: 20px;
+  padding-left: 47px !important;
+}
+.header .search-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+.header .search-wrapper .search-icon {
+  position: absolute;
+  top: 50%;
+  left: 21px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.header .search-wrapper .form-control {
+  padding-left: 2rem;
+  border: none;
+  border-radius: 30px;
+}
+.header .search-wrapper .form-control:focus {
+  box-shadow: none;
+  outline: none;
+}
+.header .social-links {
+  margin-left: 20px;
+  margin-right: 20px;
+  gap: 10px;
+}
+.header .social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #edf0f6;
+  text-decoration: none;
+  cursor: pointer;
+}
+.header .social-link .icon {
+  transition: 0.3s;
+}
+.header .social-link .icon .bg {
+  transition: fill 0.3s;
+}
+.header .social-link .icon .arrow {
+  transition: fill 0.3s;
+}
+.header .social-link:hover .bg {
+  fill: #EC1213;
+}
+.header .social-link:hover .arrow {
+  fill: #fff;
+}
+.header .lang-select {
+  min-width: 116px !important;
+  width: 116px;
+  height: 50px;
+}
+.header .city-select,
+.header .lang-select {
+  cursor: pointer;
+  background-color: #edf0f6;
+  border: none;
+  border-radius: 30px;
+  font-weight: 500;
+  padding-right: 2rem;
+}
+.header .city-select:focus,
+.header .lang-select:focus {
+  box-shadow: none;
+  outline: none;
+}
+.header .custom-select {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.header .custom-select .city-select {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #393a3c;
+  max-width: 180px;
+  height: 50px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #edf0f6;
+  border: none;
+  border-radius: 30px;
+  padding-left: 56px;
+  padding-right: 38px;
+}
+.header .custom-select .city-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.header .custom-select__icon {
+  position: absolute;
+  left: 20px;
+  pointer-events: none;
+}
+.header .custom-select__icon svg {
+  width: 15px;
+  height: auto;
+}
+.header .custom-select__arrow {
+  position: absolute;
+  right: 19px;
+  pointer-events: none;
+}
+.header .custom-select__arrow svg {
+  width: 9px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.header .custom-select:focus-within .custom-select__arrow svg {
+  transform: rotate(180deg);
+}
+.header__nav .nav-item {
+  padding-right: 50px;
+}
+.header__nav .nav-link {
+  font-weight: 600;
+  font-size: 20px;
+  color: #858d9d;
+  padding: 0;
+  cursor: pointer;
+}
+.header__nav .nav-link:hover {
+  color: #ec1213 !important;
+}
+
+/*СЕКЦИЯ КАРТОЧЕК*/
+.travel__title {
+  font-family: "Montserrat", sans-serif;
+  text-align: left;
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  margin-bottom: 39px;
+  margin-top: 80px;
+}
+
+.travel-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.travel-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+.travel-card__label {
+  position: absolute;
+  bottom: 27px;
+  left: 0px;
+  right: 74px;
+  border-radius: 0 20px 20px 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 133%;
+  color: #fff;
+  padding: 23px 0px 23px 30px;
+  width: 100%;
+  max-width: 75%;
+}
+.travel-card:hover {
+  box-shadow: 0 0 20px rgba(0, 195, 255, 0.6);
+}
+
+.bg-red {
+  background-color: #c8102e;
+}
+
+.bg-blue {
+  background-color: #00bfff;
+}
+
+.bg-overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.bg-dark {
+  background-color: #040a0d;
+}
+
+/*Секция features*/
+.features {
+  padding-top: 80px;
+  padding-bottom: 110px;
+}
+.features__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  text-align: left;
+}
+
+.feature-item {
+  text-align: center;
+}
+.feature-item__icon {
+  width: 120px;
+  height: 120px;
+  margin-right: auto;
+  margin-bottom: 33px;
+  border-radius: 50%;
+  background: #d3d9e5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.feature-item__icon svg {
+  width: 40px;
+  height: 40px;
+}
+.feature-item__text {
+  text-align: left;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  color: #858d9d;
+  margin: 0;
+}
+
+/*Секция about*/
+.about {
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+.about__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  margin-bottom: 39px;
+}
+.about__img {
+  object-fit: cover;
+  border-radius: 20px 0 0 20px;
+}
+.about__content {
+  background-color: #f1f4f9;
+  border-radius: 0 20px 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 70px 75px 70px 85px;
+}
+.about__content p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: #050505;
+  text-align: left;
+}
+.about__logo {
+  margin-right: auto;
+  margin-bottom: 32px;
+  max-height: 115px;
+  width: auto;
+}
+
+/*Footer*/
+.footer__logo {
+  margin-right: 78px;
+}
+.footer__logo img {
+  height: 78px;
+}
+.footer__nav a {
+  text-decoration: none !important;
+  font-weight: 600;
+  font-size: 20px;
+  color: #858d9d;
+}
+.footer__nav a:hover {
+  color: #ec1213 !important;
+}
+.footer__link {
+  margin-right: 50px;
+}
+.footer .social-links {
+  gap: 10px;
+}
+.footer .social-link {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #edf0f6;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer .social-link .icon {
+  transition: 0.3s;
+}
+.footer .social-link .icon .bg {
+  transition: fill 0.3s;
+}
+.footer .social-link .icon .arrow {
+  transition: fill 0.3s;
+}
+.footer .social-link:hover .bg {
+  fill: #EC1213;
+}
+.footer .social-link:hover .arrow {
+  fill: #fff;
+}
+.footer__bottom {
+  font-size: 14px;
+  color: #adb5bd;
+}
+.footer__policy {
+  color: #adb5bd;
+  text-decoration: none;
+}
+.footer__policy:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=style.css.map */
