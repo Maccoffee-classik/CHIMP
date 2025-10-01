@@ -165,6 +165,156 @@ body {
   color: #ec1213 !important;
 }
 
+/*Секция фильтров*/
+.btn-date-filter {
+  background: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 13px 16px;
+  box-shadow: none;
+  min-width: 172px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #8d8f92;
+}
+.btn-date-filter svg {
+  margin-right: 10px;
+}
+
+.date-separator {
+  display: inline-block;
+  width: 36px;
+  height: 0;
+  border-top: 1px solid #8d8f92;
+  margin: 0 10px;
+}
+
+.date-filter-menu {
+  min-width: 280px;
+}
+
+.date-filter__picker {
+  display: none;
+  width: 100%;
+  border-radius: 8px;
+}
+
+.search-filters .custom-select {
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+.search-filters .custom-select .city-select {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: #393a3c;
+  max-width: 180px;
+  height: 50px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #edf0f6;
+  border: none;
+  border-radius: 20px 20px 0 0;
+  padding-left: 56px;
+  padding-right: 38px;
+}
+.search-filters .custom-select .city-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.search-filters .custom-select .quantity-select {
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 180px;
+  height: 50px;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: #fff;
+  border: none;
+  border-radius: 30px;
+  padding: 16px 49px;
+  box-shadow: none;
+  min-width: 172px;
+  color: #8d8f92;
+}
+.search-filters .custom-select .quantity-select svg {
+  margin-right: 10px;
+}
+.search-filters .custom-select .quantity-select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.search-filters .custom-select__icon {
+  position: absolute;
+  left: 20px;
+  pointer-events: none;
+}
+.search-filters .custom-select__icon svg {
+  width: 15px;
+  height: auto;
+}
+.search-filters .custom-select__arrow {
+  position: absolute;
+  right: 19px;
+  pointer-events: none;
+}
+.search-filters .custom-select__arrow svg {
+  width: 9px;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+.search-filters .custom-select:focus-within .custom-select__arrow svg {
+  transform: rotate(180deg);
+}
+.search-filters .filter-item-quantity {
+  margin-left: 19px;
+}
+
+.search-filters .city-select select {
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  background: #edf0f6;
+  border-radius: 20px 20px 0 0;
+}
+
+.filters-form {
+  background: #edf0f6;
+  border-radius: 0 20px 0 0;
+  padding: 25px 40px 25px 19px;
+}
+
+.filter-item select,
+.filter-item input {
+  border: none;
+  font-size: 14px;
+  padding: 10px 15px;
+  color: #555;
+}
+
+.filter-item select:focus,
+.filter-item input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-danger {
+  border: none;
+  padding: 19px 29px;
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  color: #fff;
+  border-radius: 100px;
+  background: #ec1213;
+}
+
 /*СЕКЦИЯ КАРТОЧЕК*/
 .travel__title {
   font-family: "Montserrat", sans-serif;
@@ -225,6 +375,108 @@ body {
   background-color: #040a0d;
 }
 
+/*Секция comfort*/
+.comfort {
+  /*
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+      filter: invert(100%);
+    }
+  */
+}
+.comfort__title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  margin-bottom: 39px;
+}
+.comfort .nav-pills .nav-link {
+  border-radius: 20px 20px 0 0;
+  background: rgba(237, 240, 246, 0.5);
+  margin: 0 5px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #858d9d;
+  padding: 14px 20px;
+  margin: 0;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: rgba(41, 42, 47, 0.2);
+}
+.comfort .nav-pills .nav-link.active {
+  background: #edf0f6;
+  color: #858d9d;
+  text-decoration: none;
+}
+.comfort .carousel-item {
+  height: 100% !important;
+  min-height: 420px;
+}
+.comfort .carousel-inner {
+  border-radius: 0 0 0 20px;
+}
+.comfort .tab-content-text {
+  padding: 113px 75px;
+  background: #edf0f6;
+  border-radius: 0 20px 20px 0;
+}
+.comfort .tab-content-text h3 {
+  font-weight: 600;
+  font-size: 32px;
+  color: #858d9d;
+  margin-bottom: 45px;
+}
+.comfort .tab-content-text p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: #858d9d;
+  margin-bottom: 0;
+}
+.comfort .carousel-inner img {
+  object-fit: cover;
+  height: 100%;
+  min-height: 420px;
+}
+.comfort .carousel-control-next-icon {
+  background-image: url("img/next.svg");
+  background-size: 12px 12px;
+}
+.comfort .carousel-control-prev-icon {
+  background-image: url("img/prev.svg");
+  background-size: 12px 12px;
+}
+.comfort .carousel-control-next-icon, .comfort .carousel-control-prev-icon {
+  border-radius: 50%;
+  color: #fff;
+  border: 1.5px solid #fff;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+}
+.comfort .carousel-control-prev {
+  top: auto;
+  left: 20px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 38px;
+  border-radius: 50% 0 0 50%;
+  height: 36px;
+  opacity: 1;
+}
+.comfort .carousel-control-next {
+  top: auto;
+  left: 58px;
+  bottom: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  width: 38px;
+  border-radius: 0 50% 50% 0;
+  height: 36px;
+  opacity: 1;
+}
+
 /*Секция features*/
 .features {
   padding-top: 80px;
@@ -265,6 +517,100 @@ body {
   margin: 0;
 }
 
+/*секция attraction*/
+.attractions {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding: 60px 0;
+  position: relative;
+}
+
+.section-title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  margin-bottom: 30px;
+}
+
+.attractions-swiper {
+  overflow: visible; /* позволяет видеть обрезанные слайды */
+}
+
+.swiper-slide {
+  width: 640px; /* два слайда занимают 1280px */
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.attraction-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.attraction-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 30px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.8) 100%);
+  color: #fff;
+}
+
+.card-overlay h3 {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.card-overlay p {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.card-overlay button {
+  background: #e30613;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Кнопки навигации */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 16px;
+  color: #fff;
+}
+
+.attractions-swiper {
+  max-width: 1920px;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  width: 630px !important; /* фикс ширина слайда */
+}
+
 /*Секция about*/
 .about {
   padding-top: 40px;
@@ -301,6 +647,79 @@ body {
   margin-bottom: 32px;
   max-height: 115px;
   width: auto;
+}
+
+/*Contact*/
+.contact {
+  margin-bottom: -203px;
+  position: relative;
+  z-index: 2;
+}
+.contact__title {
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  margin-bottom: 39px;
+}
+.contact__form-wrapper {
+  padding: 50px 40px;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 10px 23px 0 rgba(0, 0, 0, 0.1), 0 41px 41px 0 rgba(0, 0, 0, 0.09), 0 92px 55px 0 rgba(0, 0, 0, 0.05), 0 164px 66px 0 rgba(0, 0, 0, 0.01), 0 257px 72px 0 rgba(0, 0, 0, 0);
+}
+.contact .form-floating label {
+  color: rgba(41, 47, 56, 0.7);
+  font-weight: 400;
+  font-size: 16px;
+}
+.contact .form-control {
+  border-radius: 6px;
+  padding: 20px;
+  border: 1px solid #ebebeb;
+  color: #292a2f;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgba(41, 47, 56, 0.7);
+}
+.contact .form-control:focus {
+  box-shadow: none;
+}
+.contact textarea.form-control {
+  resize: none;
+}
+.contact__btn {
+  border-radius: 20px;
+  background: #ec1213;
+  border: none;
+  padding: 16px 64px;
+  font-weight: 700;
+  font-size: 14px;
+  color: #fff;
+  margin-right: 23px;
+}
+.contact__btn:hover {
+  background: #c60f10;
+}
+
+/*Map*/
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  filter: grayscale(100%);
+}
+
+.marker {
+  position: absolute;
+  transform: translate(-50%, -100%);
+  width: 40px;
+  cursor: pointer;
 }
 
 /*Footer*/
