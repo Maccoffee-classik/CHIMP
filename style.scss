@@ -211,7 +211,133 @@ body {
     }
   }
 }
+/*Секуи банера*/
+.banner-section {
+  .carousel-control-next-icon {
+    background-image: url("img/next.svg");
+    background-size: 20px 20px;
+  }
+  .carousel-control-prev-icon {
+    background-image: url("img/prev.svg");
+    background-size: 20px 20px;
+  }
+  .carousel-control-next-icon, .carousel-control-prev-icon {
 
+    border-radius: 50%;
+    color: #fff;
+    border: 1.5px solid #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    width: 40px;
+    height: 40px;
+  }
+  .carousel-control-prev {
+    top: auto;
+    left: 0;
+    bottom: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius:  0 99px  99px 0;
+    height: 80px;
+    opacity: 1;
+  }
+  .carousel-control-next{
+    top: auto;
+    right: 0;
+    bottom: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius:  99px 0 0 99px ;
+    height: 80px;
+    opacity: 1;
+  }
+}
+#heroCarousel {
+  height: 780px; /* на всю высоту экрана */
+}
+
+#heroCarousel .carousel-item img {
+  object-fit: cover;
+  height: 780px;
+}
+
+.banner-overlay {
+  position: relative;
+  border-radius: 0 20px 20px 0;
+
+  color: #fff;
+  max-width: 450px;
+
+  padding: 58px 58px 58px 0;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -100vw;
+    width: 100vw;
+
+    z-index: 0;
+  }
+  h5 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 250%;
+    color: #fff;
+    span {
+      font-weight: 900;
+      font-size: 60px;
+    }
+  }
+  p {
+    margin-top: 22px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 171%;
+    color: #fff;
+  }
+}
+
+.banner-overlay__red{
+  background: rgba(200, 16, 46, 0.8);
+  &::after {
+    background: rgba(200, 16, 46, 0.8);
+  }
+
+}
+.banner-overlay__blue{
+  background: rgba(54, 138, 237, 0.8);
+  &::after {
+    background: rgba(54, 138, 237, 0.8);
+  }
+}
+.carousel-caption {
+  position: absolute;
+  right: 0;
+  bottom: 250px;
+  left: 0;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+  color: #fff;
+  text-align: center;
+}
+
+/* Стрелки */
+.swiper-button-prev,
+.swiper-button-next {
+  background: rgba(0, 0, 0, 0.6);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+  color: #fff;
+}
 
 /*Секция фильтров*/
 
@@ -251,6 +377,8 @@ body {
 
 
 .search-filters {
+  margin-top: -159px;
+  position: relative;
   .custom-select {
     cursor:pointer;
     position: relative;
@@ -618,13 +746,238 @@ body {
     margin: 0;
   }
 }
+
+
+
+
+/*Секция галереи*/
+.form-select { display: inline-block; width: auto; vertical-align: middle; }
+/* Gallery specific styles */
+.gallery-section {
+  position: relative;
+  border-radius: 20px;
+  padding: 43px 60px;
+  background: #edf0f6;
+  &__title {
+    font-weight: 600;
+    font-size: 36px;
+    color: #858d9d;
+    margin-bottom: 50px;
+
+  }
+
+  .custom-select {
+    margin-left: 20px;
+    cursor:pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    .city-select {
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-gray-black;
+      max-width: 180px;
+      height: 50px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+
+      background-color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding-left: 56px;
+      padding-right: 38px;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+    .city-select2 {
+      min-width: 180px;
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+      color: $text-gray-black;
+      max-width: 180px;
+      height: 50px;
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+
+      background-color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding-left: 26px;
+      padding-right: 38px;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    &__icon {
+      position: absolute;
+      left: 20px;
+      pointer-events: none;
+
+      svg {
+        width: 15px;
+        height: auto;
+
+      }
+    }
+
+    &__arrow {
+      position: absolute;
+      right: 19px;
+      pointer-events: none;
+
+      svg {
+        width: 9px;
+        height: auto;
+        transition: transform 0.3s ease;
+      }
+    }
+    &:focus-within .custom-select__arrow svg {
+      transform: rotate(180deg);
+    }
+  }
+
+
+
+}
+.gallery-images { display: flex; gap: 1rem; }
+.gallery-images .left-column { flex: 1; }
+.gallery-images .right-column { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
+.right-column .bottom-row { display: flex; gap: 1rem; flex: 1; }
+.gallery-item { position: relative; cursor: pointer; }
+.gallery-item img { border-radius: 20px; width: 100%; }
+.gallery-item .zoom-icon {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-size: 24px;
+  line-height: 48px;
+  text-align: center;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  svg {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+  }
+}
+.gallery-item {
+  figcaption {
+    width: 80%;
+    border-radius: 0 0 0 20px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 21px;
+    h5 {
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 108%;
+      color: #fff;
+
+    }
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 143%;
+      color: #fff;
+    }
+  }
+}
+
+.gallery-item:hover .zoom-icon { opacity: 1; }
+/* Modal (lightbox) styles */
+.modal-overlay {
+  display: none;
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center; align-items: center;
+  z-index: 1000;
+}
+.modal-overlay img {
+  max-width: 90%; max-height: 90%;
+  border-radius: 0.25rem;
+}
+.modal-overlay .close {
+  position: absolute;
+  top: 1rem; right: 2rem;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
 /*секция attraction*/
 .attractions {
-  max-width: 1920px;
+
   margin: 0 auto;
   padding: 60px 0;
   position: relative;
+
+  .swiper-button-next-icon {
+    background-image: url("img/next.svg");
+    background-size: 20px 20px;
+  }
+  .swiper-button-prev-icon{
+    background-image: url("img/prev.svg");
+    background-size: 20px 20px;
+  }
+  .swiper-button-next-icon, .swiper-button-prev-icon {
+
+    border-radius: 50%;
+    color: #fff;
+    border: 1.5px solid #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    width: 40px;
+    height: 40px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    display: none;
+  }
+  .swiper-button-prev {
+    top: auto;
+    left: 0;
+    bottom: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius:  0 99px  99px 0;
+    height: 80px;
+    opacity: 1;
+  }
+  .swiper-button-next{
+    top: auto;
+    right: 0;
+    bottom: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius:  99px 0 0 99px ;
+    height: 80px;
+    opacity: 1;
+  }
 }
+
+
+
 
 .section-title h2 {
   font-family: 'Montserrat', sans-serif;
@@ -633,82 +986,107 @@ body {
   color: #858d9d;
   margin-bottom: 30px;
 }
-
-.attractions-swiper {
-  overflow: visible; /* позволяет видеть обрезанные слайды */
+// Общие стили слайдера
+.swiper-slide {
+  border-radius: 0.5rem;      // Скругленные углы карточек
+  overflow: hidden;           // Скрыть излишки (для правильного обрезания изображения и оверлея)
+  position: relative;         // Относительное позиционирование (для вложенных абсолютных элементов)
 }
 
-.swiper-slide {
-  width: 640px; /* два слайда занимают 1280px */
+// Ширина контейнера слайдера и видимость половинок слайдов
+.mySwiper {
+  width: 100%;                // На мобильных - на всю ширину
+  overflow: visible;          // Разрешить содержимому выходить за границы (для частичного показа слайдов)
+}
+
+.mySwiper .swiper-slide {
   border-radius: 20px;
-  overflow: hidden;
-  position: relative;
+  width: 630px!important; /* фикс ширина отзыва (можешь подогнать под макет) */
+}
+@media (min-width: 992px) {
+  .mySwiper {
+    width: 100%;              // На больших экранах - сужаем контейнер до 70% ширины
+    margin: 0 auto;          // Центрируем его
+  }
 }
 
-.attraction-card {
-  position: relative;
-  width: 100%;
-  height: 100%;
+// Специальный второй слайд с hover-эффектом
+.special-slide {
+  .overlay {
+    border-radius: 20px;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;             // черный фон для затемнения
+    opacity: 0;                   // изначально прозрачный
+    transition: opacity 0.3s;     // плавное появление затемнения
+    pointer-events: none;         // чтобы overlay не мешал кликам/наведению
+    z-index: 1;                   // слой под текстом
+  }
+  .slide-text {
+    text-align: left;
+    padding-left: 40px;
+    padding-right: 100px;
+
+    position: absolute;
+    bottom: 27px; left: 0px;
+    width: 100%;
+
+    transition: transform 0.3s;
+    z-index: 2;                   // выше overlay
+    // (Цвет текста и выравнивание уже заданы через классы Bootstrap: .text-white .text-center)
+    h3 {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 92%;
+      color: #fff;
+    }
+    p {
+      font-weight: 400;
+      font-size: 14px;
+      color: #fff;
+
+    }
+  }
+  .plan-trip-btn {
+    color: #fff;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 15px 28px;
+
+    border:none;
+    border-radius: 20px;
+    background: #ec1213;
+    position: absolute;
+    bottom: 30px;
+    left: 0%;
+
+    margin-left: 40px;
+    transform: translateY(120%);  // сдвинуть кнопку вниз (ниже нижней границы слайда)
+    opacity: 0;                        // скрыть кнопку (прозрачная)
+    transition: transform 0.3s, opacity 0.3s;
+    z-index: 2;                        // выше overlay
+  }
+
+  // Hover-эффект: затемнение, сдвиг текста вверх, появление кнопки
+  &:hover {
+    .overlay {
+      opacity: 0.5;                    // проявляем затемнение (50% непрозрачности)
+    }
+    .slide-text {
+      transform: translateY(-60px);    // поднимаем текстовый блок вверх
+    }
+    .plan-trip-btn {
+      transform: translateY(120%);   // сдвигаем кнопку вверх на место (bottom: 20px)
+      opacity: 1;                      // делаем кнопку видимой
+    }
+    .slide-text p {
+      margin-bottom: 69px;
+    }
+  }
 }
 
-.attraction-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
 
-.card-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 30px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.8) 100%);
-  color: #fff;
-}
-
-.card-overlay h3 {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.card-overlay p {
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-.card-overlay button {
-  background: #e30613;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 12px;
-  color: #fff;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-/* Кнопки навигации */
-.swiper-button-next,
-.swiper-button-prev {
-  width: 40px;
-  height: 40px;
-  background: rgba(0,0,0,0.6);
-  border-radius: 50%;
-}
-
-.swiper-button-next:after,
-.swiper-button-prev:after {
-  font-size: 16px;
-  color: #fff;
-}
-.attractions-swiper {
-  max-width: 1920px;
-  overflow: hidden;
-}
-.swiper-slide {
-  width: 630px !important; /* фикс ширина слайда */
-}
 
 /*Секция about*/
 
@@ -754,10 +1132,157 @@ body {
   }
 }
 
+/*Секция  review-swiper*/
+
+.reviews {
+  .swiper-button-next-icon {
+    background-image: url("img/next.svg");
+    background-size: 20px 20px;
+  }
+  .swiper-button-prev-icon{
+    background-image: url("img/prev.svg");
+    background-size: 20px 20px;
+  }
+  .swiper-button-next-icon, .swiper-button-prev-icon {
+
+    border-radius: 50%;
+    color: #fff;
+    border: 1.5px solid #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+
+
+    width: 40px;
+    height: 40px;
+  }
+  .swiper-button-next:after, .swiper-button-prev:after {
+    display: none;
+  }
+  .swiper-button-prev {
+    top: auto;
+    left: 0;
+    bottom: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius:  0 99px  99px 0;
+    height: 80px;
+    opacity: 1;
+  }
+  .swiper-button-next{
+    top: auto;
+    right: 0;
+    bottom: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100px;
+    border-radius:  99px 0 0 99px ;
+    height: 80px;
+    opacity: 1;
+  }
+}
+.reviews-header {
+  padding: 0 10px;
+}
+
+.reviews-title {
+  font-weight: 600;
+  font-size: 36px;
+  color: #858d9d;
+  margin-bottom: 39px;
+}
+
+.reviews-link {
+  text-decoration: none;
+  color: #161616;
+
+}
+
+.reviews-link-text {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 143%;
+  color: #161616;
+}
+
+
+
+
+
+
+
+.review-swiper{
+  width: 100%;               /* контейнер растягивается на всю ширину родителя */
+  padding: 20px 0;           /* отступы сверху и снизу для пространства вокруг слайдера */
+}
+
+.review-swiper {
+  width: 100%;
+  padding: 40px 0; /* чтобы стрелки не наезжали */
+}
+
+.review-swiper .swiper-slide {
+  width: 630px!important; /* фикс ширина отзыва (можешь подогнать под макет) */
+}
+
+/* Стили карточки отзыва */
+.review-card {
+  background: #edf0f6;
+  border-radius: 20px;
+  padding: 35px;
+  min-height: 430px;
+
+}
+.review-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.review-photo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.review-author {
+  margin-left: 20px;
+}
+.review-name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 157%;
+  color: #050505;
+}
+.review-rating {
+  color: #FFC74D;           /* золотистый цвет для звезд рейтинга */
+  font-size: 0.9em;
+  margin-top: 6px;
+}
+.review-content {
+  margin-top: 35px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 27px 35px;
+
+}
+.review-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 122%;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  color: #050505;
+  margin-bottom: 20px;
+}
+.review-text {
+  font-weight: 400;
+  font-size: 14px;
+  color: #050505;
+}
+
 
 
 /*Contact*/
 .contact {
+  padding-top: 80px;
   margin-bottom: -203px;
   position: relative;
   z-index: 2;
