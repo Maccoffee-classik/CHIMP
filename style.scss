@@ -21,6 +21,10 @@ body {
   font-size: 20px;
   color: #858d9d;
   margin-top: 36px;
+  @media (max-width: 576px) {
+    margin-top: 20px;
+
+  }
 }
 .navbar-toggler {
   padding: 0;
@@ -70,6 +74,10 @@ body {
   padding-bottom: 30px;
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  @media (max-width: 576px) {
+    padding-top: 10px;
+
+  }
   &.scrolled {
     background-color: #edf0f6; // цвет после прокрутки
 
