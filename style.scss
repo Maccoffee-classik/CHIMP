@@ -11,71 +11,111 @@ body {
   font-family: $font-family;
 }
 
+.slogan {
+  font-weight: 600;
+  font-size: 24px;
+  color: #858d9d;
+}
+.slogan-tablet {
+  font-weight: 600;
+  font-size: 20px;
+  color: #858d9d;
+  margin-top: 36px;
+}
+.navbar-toggler {
+  padding: 0;
+  margin: 0;
+  border:none;
+  &:focus {
+    box-shadow: none;
+  }
+}
+.first-row {
+  margin-bottom: 32px!important;
+  @media (max-width: 992px) {
+    margin-bottom: 0!important;
+
+  }
+}
+
+// Изменение цвета иконки "бургер"-меню на красный
+.navbar-toggler-icon {
+  /* Заменяем SVG-фон бутстрапа с чёрных полосок на красные полоски :contentReference[oaicite:4]{index=4} */
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 0, 0, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+// Стили пункта меню при наведении и активного пункта
+.nav-link {
+  color: #000;
+  &:hover {
+    color: #e60000;  /* красный при ховере */
+  }
+  &.active {
+    color: #e60000;  /* выделяем активный пункт меню красным */
+    font-weight: 700;
+  }
+}
+
+
+
+
+
 .header {
   background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 22px;
+  padding-bottom: 30px;
+  z-index: 1000;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  &.scrolled {
+    background-color: #edf0f6; // цвет после прокрутки
 
-  &__search .form-control {
-    background-color: $gray-light;
-    border: none;
-    border-radius: $pill-radius;
-    padding: 0.375rem 1rem;
-    min-width: 250px;
 
-    &:focus {
-      box-shadow: none;
-      outline: none;
+
+    .social-link{
+      .icon {
+
+        .bg {
+          transition: fill 0.3s;
+          fill: #fff!important;
+        }
+
+        }
+        .arrow {
+          transition: fill 0.3s;
+        }
+
+      &:hover {
+        .bg {
+          fill: #EC1213!important; // красный фон
+        }
+        .arrow {
+          fill: #fff;
+        }
+      }
+      }
+    .city-select {
+      background: #fff!important;
     }
+
   }
-  .first-row {
-    margin-bottom: 32px!important;
-  }
+
+
   .logo-top {
     width: 134px;
     height: 116px;
-  }
-  .form-control {
-    height: 50px;
-    max-width: 576px;
-    font-weight: 400;
-    font-size: 14px;
-    color: $gray-dark;
-    background: $gray-light;
-   margin-right: 20px;
-    padding-left: 47px!important;
+    @media (max-width: 992px) {
+      width: 58px;
+      height: 50px;
 
-  }
-
-
-  .search-wrapper {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-
-
-    .search-icon {
-      position: absolute;
-      top: 50%;
-      left: 21px;
-      transform: translateY(-50%);
-      pointer-events: none;
-    }
-
-    .form-control {
-      padding-left: 2rem;
-
-      border: none;
-      border-radius: 30px;
-
-      &:focus {
-        box-shadow: none;
-        outline: none;
-      }
     }
   }
-
   .social-links {
     margin-left: 20px;
-    margin-right: 20px;
+    margin-right: 0px;
     gap: 10px;
   }
 
@@ -135,6 +175,7 @@ body {
     position: relative;
     display: inline-flex;
     align-items: center;
+    margin-left: 20px;
 
     .city-select {
       background: transparent;
@@ -153,6 +194,10 @@ body {
       border-radius: 30px;
       padding-left: 56px;
       padding-right: 38px;
+      @media (max-width: 576px) {
+        max-width: 84px;
+
+      }
 
       &:focus {
         outline: none;
@@ -190,9 +235,7 @@ body {
 
 
 
-
-
-  &__nav {
+  .navbar-nav.desktop {
     .nav-item {
       padding-right: 50px;
     }
@@ -210,16 +253,26 @@ body {
       }
     }
   }
+
+
 }
+
+
 /*Секуи банера*/
 .banner-section {
   .carousel-control-next-icon {
     background-image: url("img/next.svg");
     background-size: 20px 20px;
+    @media (max-width: 677px) {
+      background-size: 12px 12px;
+    }
   }
   .carousel-control-prev-icon {
     background-image: url("img/prev.svg");
     background-size: 20px 20px;
+    @media (max-width: 677px) {
+      background-size: 12px 12px;
+    }
   }
   .carousel-control-next-icon, .carousel-control-prev-icon {
 
@@ -232,6 +285,18 @@ body {
 
     width: 40px;
     height: 40px;
+    @media (max-width: 677px) {
+      border-radius: 50%;
+      color: #fff;
+      border: 1.5px solid #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+
+
+      width: 24px;
+      height: 24px;
+
+    }
   }
   .carousel-control-prev {
     top: auto;
@@ -242,7 +307,35 @@ body {
     border-radius:  0 99px  99px 0;
     height: 80px;
     opacity: 1;
+    @media (max-width: 677px) {
+      top: 19px;
+      left: 20px;
+      bottom: auto;
+      background: rgba(0, 0, 0, 0.7);
+      width: 38px;
+      border-radius:  50%  0 0 50%;
+      height: 36px;
+      opacity: 1;
+
+    }
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .carousel-control-next{
     top: auto;
     right: 0;
@@ -252,15 +345,31 @@ body {
     border-radius:  99px 0 0 99px ;
     height: 80px;
     opacity: 1;
+    @media (max-width: 677px) {
+      top: 19px;
+      left: 58px;
+      bottom: auto;
+      background: rgba(0, 0, 0, 0.7);
+      width: 38px;
+      border-radius: 0 50% 50% 0;
+      height: 36px;
+      opacity: 1;
+    }
   }
 }
 #heroCarousel {
+  margin-top: 180px;
   height: 780px; /* на всю высоту экрана */
+  @media (max-width: 677px) {
+    height: 478px;
+
+  }
 }
 
 #heroCarousel .carousel-item img {
   object-fit: cover;
   height: 780px;
+
 }
 
 .banner-overlay {
@@ -271,6 +380,14 @@ body {
   max-width: 450px;
 
   padding: 58px 58px 58px 0;
+  @media (max-width: 992px) {
+    padding:22px 27px 22px 109px;
+    max-width: 80%;
+  }
+  @media (max-width: 677px) {
+    padding:22px 27px 22px 29px;
+
+  }
   &::after {
     content: "";
     position: absolute;
@@ -286,9 +403,19 @@ body {
     font-size: 24px;
     line-height: 250%;
     color: #fff;
+
+    @media (max-width: 677px) {
+      font-size: 14px;
+
+    }
     span {
       font-weight: 900;
       font-size: 60px;
+
+      @media (max-width: 677px) {
+        font-size: 24px;
+
+      }
     }
   }
   p {
@@ -297,6 +424,10 @@ body {
     font-size: 14px;
     line-height: 171%;
     color: #fff;
+    @media (max-width: 577px) {
+      margin-top: 0px;
+
+    }
   }
 }
 
@@ -355,6 +486,10 @@ body {
   svg {
     margin-right: 10px;
   }
+  @media (max-width: 677px) {
+    min-width: 300px;
+
+  }
 }
 
 .date-separator {
@@ -363,6 +498,10 @@ body {
   height: 0;
   border-top: 1px solid #8d8f92;
   margin: 0 10px;
+  @media (max-width: 677px) {
+  display: none;
+
+  }
 }
 
 .date-filter-menu {
@@ -377,8 +516,21 @@ body {
 
 
 .search-filters {
-  margin-top: -159px;
+  margin-top: -157px;
   position: relative;
+  @media (max-width: 677px) {
+    margin-top: 250px;
+
+  }
+  .filter-item-city {
+    @media (max-width: 576px) {
+      display: flex!important;
+      justify-content: center;
+      max-width: 190px;
+      margin: 0 auto;
+
+    }
+  }
   .custom-select {
     cursor:pointer;
     position: relative;
@@ -386,23 +538,25 @@ body {
     align-items: center;
 
 
+
     .city-select {
       background: transparent;
-      font-size: 14px;
-      font-weight: 500;
-      color: $text-gray-black;
       max-width: 180px;
       height: 50px;
       appearance: none;
       -webkit-appearance: none;
       -moz-appearance: none;
-
-
       background-color: $gray-light;
       border: none;
       border-radius: 20px 20px 0 0;
       padding-left: 56px;
       padding-right: 38px;
+      font-weight: 700;
+      font-size: 18px;
+      color: #292a2f;
+
+
+
 
       &:focus {
         outline: none;
@@ -445,6 +599,10 @@ body {
         outline: none;
         box-shadow: none;
       }
+      @media (max-width: 677px) {
+        min-width: 300px;
+
+      }
     }
 
     &__icon {
@@ -476,6 +634,28 @@ body {
   }
   .filter-item-quantity {
     margin-left: 19px;
+    @media (max-width: 677px) {
+      margin-left: 0;
+
+    }
+
+  }
+  .filter-item {
+    margin-left: auto;
+    @media (max-width: 992px) {
+      width: 100%;
+      margin-top: 20px;
+      margin-right: auto;
+      justify-content: center;
+      display: flex ;
+
+
+    }
+    @media (max-width: 677px) {
+      margin-top: 10px;
+
+    }
+
   }
 
 }
@@ -492,9 +672,29 @@ body {
 
 
 .filters-form {
+  margin-top: -1px;
   background: #edf0f6;
   border-radius: 0 20px 0 0;
   padding: 25px 40px 25px 19px;
+  @media (max-width: 992px) {
+    border-radius: 0;
+    flex-wrap: wrap;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-left: -40px;
+    margin-right: -40px;
+
+  }
+  @media (max-width: 677px) {
+    flex-direction: column;
+    gap: 10px;
+
+
+  }
+  @media (max-width: 576px) {
+    margin-left: -5px;
+    margin-right: -5px;
+  }
 }
 
 .filter-item select,
@@ -521,6 +721,14 @@ body {
   color: #fff;
   border-radius: 100px;
   background: #ec1213;
+  @media (max-width: 768px) {
+    padding: 15px 29px;
+
+  }
+  @media (max-width: 577px) {
+
+
+  }
 }
 
 /*СЕКЦИЯ КАРТОЧЕК*/
@@ -533,8 +741,23 @@ body {
     color: #858d9d;
     margin-bottom: 39px;
     margin-top: 80px;
+    @media (max-width: 576px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+  }
+  .row {
+    @media (max-width: 992px) {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+
+
   }
 }
+
+
 
 .travel-card {
   position: relative;
@@ -593,6 +816,10 @@ body {
 /*Секция comfort*/
 
 .comfort {
+  padding-top: 60px;
+  @media (max-width: 576px) {
+    padding-top: 50px;
+  }
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -600,6 +827,10 @@ body {
     font-size: 36px;
     color: #858d9d;
     margin-bottom: 39px;
+    @media (max-width: 576px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
 
   .nav-pills .nav-link {
@@ -628,11 +859,22 @@ body {
   }
   .carousel-inner {
     border-radius:  0 0 0 20px;
+    @media (max-width: 992px) {
+      border-radius:  0 20px 0 0 ;
+    }
   }
   .tab-content-text {
     padding: 113px 75px;
     background: #edf0f6;
     border-radius: 0 20px 20px 0;
+    @media (max-width: 992px) {
+      border-radius:  0 0 20px 20px ;
+      padding: 43px 65px;
+    }
+    @media (max-width: 677px) {
+      padding: 37px 20px;
+
+    }
     h3 {
       font-weight: 600;
       font-size: 32px;
@@ -707,17 +949,31 @@ body {
 .features {
   padding-top: 80px;
   padding-bottom: 110px;
+  @media (max-width: 576px) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 36px;
     color: #858d9d;
     text-align: left;
+    margin-bottom: 39px;
+    @media (max-width: 576px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
 }
 
 .feature-item {
   text-align: center;
+  @media (max-width: 576px) {
+
+    display: flex;
+    align-items: center;
+  }
 
   &__icon {
     width: 120px;
@@ -729,6 +985,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (max-width: 576px) {
+
+      margin-right:19px;
+      margin-bottom: 0;
+    }
 
 
     svg {
@@ -755,23 +1016,45 @@ body {
 /* Gallery specific styles */
 .gallery-section {
   position: relative;
-  border-radius: 20px;
-  padding: 43px 60px;
-  background: #edf0f6;
+
+
+  .gallery-wrapper{
+    border-radius: 20px;
+    padding: 43px 60px;
+    background: #edf0f6;
+    @media (max-width: 992px) {
+      padding: 43px 30px;
+    }
+  }
+
   &__title {
     font-weight: 600;
     font-size: 36px;
     color: #858d9d;
-    margin-bottom: 50px;
+
+    @media (max-width: 576px) {
+      font-size: 24px;
+      margin-bottom: 28px;
+    }
 
   }
+  .custom-select-wrapper {
+    @media (max-width: 768px) {
+      width: 100%;
+    }
 
+  }
   .custom-select {
     margin-left: 20px;
     cursor:pointer;
     position: relative;
     display: inline-flex;
     align-items: center;
+    @media (max-width: 768px) {
+      margin-left: 0px;
+      margin-bottom: 10px;
+
+    }
 
     .city-select {
       background: transparent;
@@ -790,6 +1073,11 @@ body {
       border-radius: 30px;
       padding-left: 56px;
       padding-right: 38px;
+      @media (max-width: 768px) {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+      }
 
       &:focus {
         outline: none;
@@ -814,6 +1102,11 @@ body {
       border-radius: 30px;
       padding-left: 26px;
       padding-right: 38px;
+      @media (max-width: 768px) {
+        width: 100%;
+        max-width: 100%;
+        min-width: 100%;
+      }
 
       &:focus {
         outline: none;
@@ -852,12 +1145,28 @@ body {
 
 
 }
-.gallery-images { display: flex; gap: 1rem; }
+.gallery-images {
+  margin-top: 50px;
+  display: flex; gap: 1rem;
+  @media (max-width: 992px) {
+    flex-direction: column;
+    margin-top: 47px;
+  }
+  @media (max-width: 667px) {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+}
 .gallery-images .left-column { flex: 1; }
 .gallery-images .right-column { flex: 1; display: flex; flex-direction: column; gap: 1rem; }
 .right-column .bottom-row { display: flex; gap: 1rem; flex: 1; }
 .gallery-item { position: relative; cursor: pointer; }
 .gallery-item img { border-radius: 20px; width: 100%; }
+.top-small img {
+  @media (max-width: 576px) {
+    height: 366px;
+  }
+}
 .gallery-item .zoom-icon {
   position: absolute;
   top: 50%; left: 50%;
@@ -930,6 +1239,9 @@ body {
   margin: 0 auto;
   padding: 60px 0;
   position: relative;
+  @media (max-width: 576px) {
+   display: none;
+  }
 
   .swiper-button-next-icon {
     background-image: url("img/next.svg");
@@ -1098,13 +1410,21 @@ body {
     font-weight: 600;
     font-size: 36px;
     color: #858d9d;
-    margin-bottom: 39px;
+    padding-bottom: 39px;
+    @media (max-width: 576px) {
+      font-size: 24px;
+      padding-bottom: 20px;
+    }
   }
 
   &__img {
     object-fit: cover;
 
     border-radius:  20px 0 0 20px ;
+    @media (max-width: 992px) {
+      border-radius: 20px 20px 0 0;
+
+    }
   }
 
   &__content {
@@ -1114,6 +1434,14 @@ body {
     flex-direction: column;
     justify-content: center;
     padding: 70px 75px 70px 85px;
+    @media (max-width: 992px) {
+      border-radius: 0 0 20px 20px;
+      padding: 40px 63px;
+    }
+    @media (max-width: 676px) {
+
+      padding: 34px 25px;
+    }
 
     p {
       font-weight: 400;
@@ -1129,6 +1457,11 @@ body {
     margin-bottom: 32px;
     max-height: 115px;
     width: auto;
+    @media (max-width: 676px) {
+
+      margin-bottom: 25px;
+      max-height: 99px;
+    }
   }
 }
 
@@ -1187,12 +1520,24 @@ body {
   font-weight: 600;
   font-size: 36px;
   color: #858d9d;
-  margin-bottom: 39px;
+
+  @media (max-width: 576px) {
+    font-size: 24px;
+    margin-right: auto;
+
+
+  }
 }
 
 .reviews-link {
   text-decoration: none;
   color: #161616;
+  @media (max-width: 576px) {
+
+    margin-right: auto;
+
+
+  }
 
 }
 
@@ -1215,12 +1560,19 @@ body {
 }
 
 .review-swiper {
+  margin-top: 39px;
   width: 100%;
   padding: 40px 0; /* чтобы стрелки не наезжали */
+  @media (max-width: 576px) {
+    margin-top: 20px;
+  }
 }
 
 .review-swiper .swiper-slide {
   width: 630px!important; /* фикс ширина отзыва (можешь подогнать под макет) */
+  @media (max-width: 576px) {
+    width: 365px!important;
+  }
 }
 
 /* Стили карточки отзыва */
@@ -1229,6 +1581,9 @@ body {
   border-radius: 20px;
   padding: 35px;
   min-height: 430px;
+  @media (max-width: 576px) {
+    min-height: 570px;
+  }
 
 }
 .review-header {
@@ -1291,6 +1646,10 @@ body {
     font-size: 36px;
     color: #858d9d;
     margin-bottom: 39px;
+    @media (max-width: 576px) {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
 
   &__form-wrapper {
@@ -1337,6 +1696,12 @@ body {
     font-size: 14px;
     color: #fff;
     margin-right: 23px;
+    @media (max-width: 576px) {
+
+      min-width: 240px;
+      margin: 0 auto;
+
+    }
 
     &:hover {
       background: #c60f10;
@@ -1370,10 +1735,26 @@ body {
 
 
     margin-right: 78px;
+    @media (max-width: 992px) {
+
+      justify-content: center;
+      margin-right: 0;
+      margin-bottom: 46px;
+
+    }
 
     img {
       height: 78px;
     }
+  }
+  &__nav {
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
   }
 
   &__nav a {
@@ -1382,6 +1763,7 @@ body {
     font-weight: 600;
     font-size: 20px;
     color: #858d9d;
+    margin-bottom: 30px;
 
     &:hover {
       color: $active-color !important;
@@ -1389,11 +1771,21 @@ body {
   }
   &__link {
     margin-right: 50px;
+    @media (max-width: 992px) {
+      display: flex;
+      justify-content: center;
+      margin: 0 auto;
+    }
   }
   .social-links {
 
 
     gap: 10px;
+    @media (max-width: 992px) {
+
+      justify-content: center;
+
+    }
   }
 
   .social-link {
@@ -1437,5 +1829,150 @@ body {
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 100%; /* или своё значение */
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+
+// На мобильных и планшетах разрешаем перенос элементов навбара на новую строку
+@media (max-width: 991.98px) {
+  .navbar {
+    flex-wrap: wrap; /* позволяем навбару переносить элементы (для слогана отдельной строкой) */
+  }
+  .slogan {
+    width: 100%;
+    margin-top: 0.5rem;
+    text-align: center;
+    /* Слоган станет на отдельной строке под логотипом/бургером */
+  }
+}
+
+// Оформление offcanvas-меню (мобильное раскрывающееся меню)
+.offcanvas-start {
+  width: 100% !important;    /* ширина на весь экран */
+  max-width: none !important;
+  background-color:  #edf0f6; /* тёмный фон для меню */
+  color: #858d9d;             /* текст и иконки по умолчанию белые на тёмном фоне */
+}
+.offcanvas-body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  min-height: 100vh; /* занимаем всю высоту экрана */
+  padding: 1rem 1.5rem;
+  .custom-select-wrapper {
+    margin-left: auto;
+  }
+
+  .social-link{
+    .icon {
+
+      .bg {
+        transition: fill 0.3s;
+        fill: #fff!important;
+      }
+
+    }
+    .arrow {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      .bg {
+        fill: #EC1213!important; // красный фон
+      }
+      .arrow {
+        fill: #fff;
+      }
+    }
+  }
+  .city-select {
+    background: #fff!important;
+  }
+}
+.offcanvas-logo img.logo-top-mob {
+  /* Логотип в меню – чуть крупнее, по центру */
+  max-width: 100%;
+  height: 114px;
+  margin-bottom: 68px;
+  margin-top: 124px;
+}
+.offcanvas .nav-link {
+  /* Ссылки меню в offcanvas – белые, большего размера */
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: #858d9d;
+  margin-bottom: 0.5rem;
+  border-bottom:  1px solid #dee3ee;;
+  &:hover {
+    color: #ffcccc;
+  }
+  &.active {
+    color: #ff6666;
+    font-weight: 700;
+  }
+}
+.close-btn {
+  /* Кнопка закрытия меню (красная "X" в углу) */
+  position: absolute;
+  top: 16px;
+  left: 10px;
+  text-decoration: none;
+}
+.offcanvas-social {
+ /* сдвигаем блок соцсетей к низу оффканваса */
+  margin: auto auto 0 ;
+  justify-content: center;
+  gap: 0!important;
+  .social-link{
+    .icon {
+
+      .bg {
+        transition: fill 0.3s;
+        fill: #fff!important;
+      }
+
+    }
+    .arrow {
+      transition: fill 0.3s;
+    }
+
+    &:hover {
+      .bg {
+        fill: #EC1213!important; // красный фон
+      }
+      .arrow {
+        fill: #fff;
+      }
+    }
+  }
+}
+.offcanvas-social a {
+  color: #fff;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  &:hover {
+    color: #ffcccc;
+  }
+}
+
+
+
+/* Мобильные и меньше (≤375px) */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
