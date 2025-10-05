@@ -2,6 +2,12 @@
 body {
   font-family: "Montserrat", sans-serif;
 }
+@media (max-width: 576px) {
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+}
 
 .slogan {
   font-weight: 600;
@@ -1685,6 +1691,12 @@ body {
   color: rgba(41, 47, 56, 0.5);
 }
 /*Map*/
+@media (max-width: 576px) {
+  #map {
+    overflow-x: hidden;
+  }
+}
+
 .map-container {
   position: relative;
   width: 100%;
@@ -1912,6 +1924,7 @@ body {
   .container {
     padding-left: 5px;
     padding-right: 5px;
+    overflow-x: hidden;
   }
 }
 
