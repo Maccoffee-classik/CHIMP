@@ -76,6 +76,7 @@ body {
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   @media (max-width: 576px) {
     padding-top: 10px;
+    padding-bottom: 20px;
 
   }
   &.scrolled {
@@ -107,6 +108,9 @@ body {
       }
     .city-select {
       background: #fff!important;
+    }
+    .slogan-tablet {
+      display: none!important;
     }
 
   }
@@ -756,6 +760,7 @@ body {
     @media (max-width: 576px) {
       font-size: 24px;
       margin-bottom: 20px;
+      margin-top: 50px;
     }
   }
   .row {
@@ -777,6 +782,9 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s ease;
+  @media (max-width: 576px) {
+
+  }
 
   &__img {
     width: 100%;
@@ -873,6 +881,9 @@ body {
     border-radius:  0 0 0 20px;
     @media (max-width: 992px) {
       border-radius:  0 20px 0 0 ;
+    }
+    @media (max-width: 576px) {
+      border-radius:  0 0 0 0;
     }
   }
   .tab-content-text {
@@ -1037,6 +1048,9 @@ body {
     @media (max-width: 992px) {
       padding: 43px 30px;
     }
+    @media (max-width: 576px) {
+      padding: 32px 23px 22px;
+    }
   }
 
   &__title {
@@ -1176,7 +1190,7 @@ body {
 .gallery-item img { border-radius: 20px; width: 100%; }
 .top-small img {
   @media (max-width: 576px) {
-    height: 366px;
+
   }
 }
 .gallery-item .zoom-icon {
@@ -1206,11 +1220,18 @@ body {
     border-radius: 0 0 0 20px;
     background: rgba(0, 0, 0, 0.6);
     padding: 21px;
+    @media (max-width: 576px) {
+      width: 100%;
+      border-radius: 0 0 20px 20px;
+    }
     h5 {
       font-weight: 900;
       font-size: 24px;
       line-height: 108%;
       color: #fff;
+      @media (max-width: 576px) {
+        font-size: 18px;
+      }
 
     }
     p {
@@ -1218,6 +1239,9 @@ body {
       font-size: 14px;
       line-height: 143%;
       color: #fff;
+      @media (max-width: 576px) {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -1287,6 +1311,9 @@ body {
     border-radius:  0 99px  99px 0;
     height: 80px;
     opacity: 1;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .swiper-button-next{
     top: auto;
@@ -1297,6 +1324,9 @@ body {
     border-radius:  99px 0 0 99px ;
     height: 80px;
     opacity: 1;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 
@@ -1417,6 +1447,9 @@ body {
 .about {
   padding-top: 40px;
   padding-bottom: 80px;
+  @media (max-width: 576px) {
+    padding-bottom: 50px;
+  }
   &__title {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
@@ -1512,6 +1545,9 @@ body {
     border-radius:  0 99px  99px 0;
     height: 80px;
     opacity: 1;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
   .swiper-button-next{
     top: auto;
@@ -1522,6 +1558,9 @@ body {
     border-radius:  99px 0 0 99px ;
     height: 80px;
     opacity: 1;
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 }
 .reviews-header {
@@ -1594,7 +1633,8 @@ body {
   padding: 35px;
   min-height: 430px;
   @media (max-width: 576px) {
-    min-height: 570px;
+    min-height: 490px;
+    padding: 35px 16px 16px;
   }
 
 }
@@ -1628,6 +1668,9 @@ body {
   background: #fff;
   border-radius: 20px;
   padding: 27px 35px;
+  @media (max-width: 576px) {
+    min-height: 322px;
+  }
 
 }
 .review-title {
@@ -1671,6 +1714,9 @@ body {
     background: #fff;
     box-shadow: 0 10px 23px 0 rgba(0, 0, 0, 0.1), 0 41px 41px 0 rgba(0, 0, 0, 0.09), 0 92px 55px 0 rgba(0, 0, 0, 0.05), 0 164px 66px 0 rgba(0, 0, 0, 0.01), 0 257px 72px 0 rgba(0, 0, 0, 0);
 
+    @media (max-width: 576px) {
+      padding: 27px 20px 20px;
+    }
   }
   .form-floating {
     label {
@@ -1717,6 +1763,14 @@ body {
 
     &:hover {
       background: #c60f10;
+    }
+  }
+  .text-required {
+    font-weight: 400;
+    font-size: 12px;
+    color: rgba(41, 47, 56, 0.5);
+    @media (max-width: 576px) {
+
     }
   }
 }

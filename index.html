@@ -545,27 +545,27 @@
 <section class="travel">
   <div class="container">
     <h2 class="travel__title ">Путешествуйте с нами</h2>
-    <div class="row g-4">
+    <div class="row g-3 g-sm-4">
       <!-- Карточка -->
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-10 col-sm-6 col-lg-3">
         <div class="travel-card">
           <img src="img/moscow.png" alt="Москва" class="travel-card__img">
           <div class="travel-card__label bg-red">Москва</div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-10 col-sm-6 col-lg-3">
         <div class="travel-card ">
           <img src="img/sochi.png" alt="Сочи" class="travel-card__img">
           <div class="travel-card__label bg-blue">Сочи</div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-10 col-sm-6 col-lg-3">
         <div class="travel-card">
           <img src="img/simferopol.png" alt="Симферополь" class="travel-card__img">
           <div class="travel-card__label bg-overlay">Симферополь</div>
         </div>
       </div>
-      <div class="col-12 col-sm-6 col-lg-3">
+      <div class="col-10 col-sm-6 col-lg-3">
         <div class="travel-card">
           <img src="img/voronezh.png" alt="Воронеж" class="travel-card__img">
           <div class="travel-card__label bg-dark">Воронеж</div>
@@ -834,7 +834,18 @@
     <!-- Right Column Small Images -->
     <div class="right-column">
       <div class="gallery-item top-small">
-        <img src="img/metropol2.png" alt="metropol4" class="img-fluid" />
+        <picture>
+          <!-- до 577px (мобильные) -->
+          <source srcset="img/metropol2-mobile.png" media="(max-width: 577px)">
+
+
+          <!-- по умолчанию (десктоп) -->
+          <img src="img/metropol2.png" alt="metropol4" class="img-fluid" />
+        </picture>
+
+
+
+
         <span class="zoom-icon"><svg width="41" height="44" viewBox="0 0 41 44" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M16.4903 0.117072C9.31015 0.956312 3.23033 5.87985 0.955054 12.7243C-1.97296 21.5457 2.01809 31.113 10.3732 35.2533C15.0729 37.5845 20.6679 37.8083 25.4982 35.8314C26.6358 35.3838 27.0088 35.1787 28.3702 34.3767L29.1349 33.9291L34.1703 38.9646L39.2057 44L39.8398 43.3659L40.4739 42.7318L35.5317 37.7896L30.5709 32.8288L31.2982 32.176C32.1934 31.3741 33.3497 30.0127 34.0771 28.8937C36.8932 24.6229 37.8443 19.5128 36.7626 14.552C34.7112 5.33901 25.8898 -0.945965 16.4903 0.117072ZM21.6004 2.05665C24.9946 2.69074 27.8294 4.16407 30.2725 6.5326C32.8275 8.99437 34.4501 12.0529 35.1774 15.671C35.4385 17.0511 35.4385 20.1469 35.1774 21.5457C34.4874 25.0145 33.07 27.7933 30.6828 30.2738C28.221 32.8288 25.1811 34.4513 21.5444 35.1787C20.1643 35.4398 17.0685 35.4398 15.6697 35.1787C12.033 34.4513 8.99311 32.8288 6.53134 30.2738C4.14417 27.812 2.72678 24.9959 2.03674 21.5457C1.75699 20.1283 1.77564 17.163 2.05539 15.671C2.68948 12.1462 4.20012 9.31141 6.75514 6.75639C9.6272 3.86568 12.5552 2.46694 16.9939 1.83285C17.7026 1.7396 20.6865 1.87015 21.6004 2.05665Z" fill="white" fill-opacity="0.5" />
   <path d="M17.7212 14.6265V17.7223H14.6067H11.5109V18.5989V19.4754H14.6067H17.7026V22.5713V25.6671H18.5791H19.4557V22.5713V19.4754H22.5515H25.6474V18.5989V17.7223H22.5515H19.493V14.6265V11.512H18.6164H17.7399V14.6265H17.7212Z" fill="white" fill-opacity="0.5" />
@@ -1344,8 +1355,8 @@
 
         <div class="col-12 d-flex align-items-center justify-content-start flex-wrap">
           <button type="submit" class="btn btn-danger contact__btn px-5">Задать вопрос</button>
-          <small class="text-muted mt-2 mt-sm-0">
-            Нажав кнопку «Оставить заявку» вы принимаете условия<br> обработки персональных данных
+          <small class="text-required mt-2 mt-md-0">
+            Нажав кнопку «Оставить заявку» вы принимаете условия<br class="d-none d-sm-block" > обработки персональных данных
           </small>
         </div>
       </form>
@@ -1443,11 +1454,30 @@
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
+    autoplay: {               // включаем автопрокрутку
+      delay: 3000,            // задержка между слайдами (мс)
+      disableOnInteraction: false // не останавливать при ручном свайпе
+    },
     // Адаптив: на экранах >=576px показывать 2 слайда
     breakpoints: {
-      576: {
-        slidesPerView: 2.5,   // 2 карточки одновременно на планшетах/десктопах
-        spaceBetween: 20,
+      0: {                    // для всех мобильных устройств
+        slidesPerView: 1.2,
+        centeredSlides: true,
+        autoplay: {           // автопрокрутка только на мобилке
+          delay: 2500,
+          disableOnInteraction: false
+        },
+
+      },
+      768: {                  // планшеты
+        slidesPerView: 1.5,
+        centeredSlides: true,
+
+      },
+      1024: {                 // десктоп
+        slidesPerView: 2.5,
+        autoplay: false,      // можно отключить автопрокрутку
+
       }
     }
   });
@@ -1455,20 +1485,35 @@
 
 
   const reviewSwiper = new Swiper('.review-swiper', {
-    slidesPerView: 2.5,       // 2 целых + по половинке
-    /*centeredSlides: true,*/     // центрируем 2 слайда
-    spaceBetween: 20,         // отступы между отзывами
+    slidesPerView: 2.5,       // 2 целых + половинка
+    spaceBetween: 20,         // отступы между слайдами
     navigation: {
       nextEl: '.review-next',
       prevEl: '.review-prev',
     },
+    autoplay: {               // включаем автопрокрутку
+      delay: 3000,            // задержка между слайдами (мс)
+      disableOnInteraction: false // не останавливать при ручном свайпе
+    },
     breakpoints: {
-      768: {
-        slidesPerView: 1.2,   // на мобиле 1 + кусочек
-        centeredSlides: true
+      0: {                    // для всех мобильных устройств
+        slidesPerView: 1.2,
+        centeredSlides: true,
+        autoplay: {           // автопрокрутка только на мобилке
+          delay: 2500,
+          disableOnInteraction: false
+        },
+
       },
-      1024: {
-        slidesPerView: 2.5,   // на десктопе нужный эффект
+      768: {                  // планшеты
+        slidesPerView: 1.5,
+        centeredSlides: true,
+
+      },
+      1024: {                 // десктоп
+        slidesPerView: 2.5,
+        autoplay: false,      // можно отключить автопрокрутку
+
       }
     }
   });

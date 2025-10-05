@@ -69,6 +69,7 @@ body {
 @media (max-width: 576px) {
   .header {
     padding-top: 10px;
+    padding-bottom: 20px;
   }
 }
 .header.scrolled {
@@ -89,6 +90,9 @@ body {
 }
 .header.scrolled .city-select {
   background: #fff !important;
+}
+.header.scrolled .slogan-tablet {
+  display: none !important;
 }
 .header .logo-top {
   width: 134px;
@@ -665,6 +669,7 @@ body {
   .travel__title {
     font-size: 24px;
     margin-bottom: 20px;
+    margin-top: 50px;
   }
 }
 @media (max-width: 992px) {
@@ -780,6 +785,11 @@ body {
 @media (max-width: 992px) {
   .comfort .carousel-inner {
     border-radius: 0 20px 0 0;
+  }
+}
+@media (max-width: 576px) {
+  .comfort .carousel-inner {
+    border-radius: 0 0 0 0;
   }
 }
 .comfort .tab-content-text {
@@ -940,6 +950,11 @@ body {
     padding: 43px 30px;
   }
 }
+@media (max-width: 576px) {
+  .gallery-section .gallery-wrapper {
+    padding: 32px 23px 22px;
+  }
+}
 .gallery-section__title {
   font-weight: 600;
   font-size: 36px;
@@ -1092,12 +1107,6 @@ body {
   width: 100%;
 }
 
-@media (max-width: 576px) {
-  .top-small img {
-    height: 366px;
-  }
-}
-
 .gallery-item .zoom-icon {
   position: absolute;
   top: 50%;
@@ -1127,17 +1136,33 @@ body {
   background: rgba(0, 0, 0, 0.6);
   padding: 21px;
 }
+@media (max-width: 576px) {
+  .gallery-item figcaption {
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+  }
+}
 .gallery-item figcaption h5 {
   font-weight: 900;
   font-size: 24px;
   line-height: 108%;
   color: #fff;
 }
+@media (max-width: 576px) {
+  .gallery-item figcaption h5 {
+    font-size: 18px;
+  }
+}
 .gallery-item figcaption p {
   font-weight: 500;
   font-size: 14px;
   line-height: 143%;
   color: #fff;
+}
+@media (max-width: 576px) {
+  .gallery-item figcaption p {
+    font-size: 12px;
+  }
 }
 
 .gallery-item:hover .zoom-icon {
@@ -1215,6 +1240,11 @@ body {
   height: 80px;
   opacity: 1;
 }
+@media (max-width: 768px) {
+  .attractions .swiper-button-prev {
+    display: none;
+  }
+}
 .attractions .swiper-button-next {
   top: auto;
   right: 0;
@@ -1224,6 +1254,11 @@ body {
   border-radius: 99px 0 0 99px;
   height: 80px;
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .attractions .swiper-button-next {
+    display: none;
+  }
 }
 
 .section-title h2 {
@@ -1327,6 +1362,11 @@ body {
   padding-top: 40px;
   padding-bottom: 80px;
 }
+@media (max-width: 576px) {
+  .about {
+    padding-bottom: 50px;
+  }
+}
 .about__title {
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -1419,6 +1459,11 @@ body {
   height: 80px;
   opacity: 1;
 }
+@media (max-width: 768px) {
+  .reviews .swiper-button-prev {
+    display: none;
+  }
+}
 .reviews .swiper-button-next {
   top: auto;
   right: 0;
@@ -1428,6 +1473,11 @@ body {
   border-radius: 99px 0 0 99px;
   height: 80px;
   opacity: 1;
+}
+@media (max-width: 768px) {
+  .reviews .swiper-button-next {
+    display: none;
+  }
 }
 
 .reviews-header {
@@ -1497,7 +1547,8 @@ body {
 }
 @media (max-width: 576px) {
   .review-card {
-    min-height: 570px;
+    min-height: 490px;
+    padding: 35px 16px 16px;
   }
 }
 
@@ -1536,6 +1587,11 @@ body {
   background: #fff;
   border-radius: 20px;
   padding: 27px 35px;
+}
+@media (max-width: 576px) {
+  .review-content {
+    min-height: 322px;
+  }
 }
 
 .review-title {
@@ -1579,6 +1635,11 @@ body {
   background: #fff;
   box-shadow: 0 10px 23px 0 rgba(0, 0, 0, 0.1), 0 41px 41px 0 rgba(0, 0, 0, 0.09), 0 92px 55px 0 rgba(0, 0, 0, 0.05), 0 164px 66px 0 rgba(0, 0, 0, 0.01), 0 257px 72px 0 rgba(0, 0, 0, 0);
 }
+@media (max-width: 576px) {
+  .contact__form-wrapper {
+    padding: 27px 20px 20px;
+  }
+}
 .contact .form-floating label {
   color: rgba(41, 47, 56, 0.7);
   font-weight: 400;
@@ -1618,7 +1679,11 @@ body {
 .contact__btn:hover {
   background: #c60f10;
 }
-
+.contact .text-required {
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(41, 47, 56, 0.5);
+}
 /*Map*/
 .map-container {
   position: relative;
